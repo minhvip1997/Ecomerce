@@ -24,8 +24,7 @@ public class PhotoServiceImpl implements PhotoService{
 	public void delete(int id) {
 		photoRepository.deleteById(id);
         System.out.println("minh dep trai so 2");
-        System.out.println("ai dam nhan minh 1");
-        System.out.println("ai dam nhan minh 3");
+        System.out.println("ai dam nhan minh 1asdadadas");
         System.out.println("commit: Lưu lại trạng thái của index");
 
 
