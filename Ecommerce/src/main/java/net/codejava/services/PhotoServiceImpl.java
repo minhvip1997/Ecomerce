@@ -23,7 +23,7 @@ public class PhotoServiceImpl implements PhotoService{
 	@Override
 	public void delete(int id) {
 		photoRepository.deleteById(id);
-        System.out.println("minhdep trai");
+        System.out.println("minhdep trai so 1");
 	}
 
 	@Override
