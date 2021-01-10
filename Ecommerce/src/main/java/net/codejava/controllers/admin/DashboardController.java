@@ -14,23 +14,24 @@ import net.codejava.services.ProductService;
 @Controller
 @RequestMapping("/admin/dashboard")
 public class DashboardController {
-	
-	@Autowired
-	private InvoiceService invoiceService;
-	@Autowired
-	private ProductService productService;
-	@Autowired
-	private AccountService accountService;
-	@Autowired
-	private CategoryService categoryService;
-	@RequestMapping(method=RequestMethod.GET)
-	public String index(ModelMap modelMap) {
-		modelMap.put("countNewInvoices", invoiceService.countNewInvoices("pending"));
-		modelMap.put("countProducts", productService.count());
-		modelMap.put("countCustomers", accountService.countCustomer());
-		modelMap.put("countCategory", categoryService.count());
-		return "admin.dashboard.index";
-	}
-	
+    
+    @Autowired
+    private InvoiceService invoiceService;
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private AccountService accountService;
+    @Autowired
+    private CategoryService categoryService;
+    @RequestMapping(method=RequestMethod.GET)
+    public String index(ModelMap modelMap) {
+        modelMap.put("countNewInvoices", invoiceService.countNewInvoices("pending"));
+        modelMap.put("countProducts", productService.count());
+        modelMap.put("countCustomers", accountService.countCustomer());
+        modelMap.put("countCategory", categoryService.count());
+        return "admin.dashboard.index";
+
+    }
+    
 }
 

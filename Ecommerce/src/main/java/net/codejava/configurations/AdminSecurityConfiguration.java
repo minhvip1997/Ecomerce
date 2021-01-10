@@ -26,12 +26,26 @@ public class AdminSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable();
-		http.antMatcher("/admin/**").authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')").and()
-				.formLogin().loginPage("/admin-panel").loginProcessingUrl("/admin/process-login")
-				.defaultSuccessUrl("/admin-panel/welcome").failureUrl("/admin-panel/login?error")
-				.usernameParameter("username").passwordParameter("password").and().logout()
-				.logoutUrl("/admin-panel/logout").logoutSuccessUrl("/admin-panel/login?logout")
-				.deleteCookies("JSESSIONID").and().exceptionHandling().accessDeniedPage("/admin-panel/accessDenied");
+		http.antMatcher("/admin/**")
+			.authorizeRequests()
+			.antMatchers("/admin/**")
+			.access("hasRole('ROLE_ADMIN')")
+			.and()
+			.formLogin()
+			.loginPage("/admin-panel")
+			.loginProcessingUrl("/admin/process-login")
+			.defaultSuccessUrl("/admin-panel/welcome")
+			.failureUrl("/admin-panel/login?error")
+			.usernameParameter("username")
+			.passwordParameter("password")
+			.and()
+			.logout()
+			.logoutUrl("/admin-panel/logout")
+			.logoutSuccessUrl("/admin-panel/login?logout")
+			.deleteCookies("JSESSIONID")
+			.and()
+			.exceptionHandling()
+			.accessDeniedPage("/admin-panel/accessDenied");
 	}
 
 	@Autowired
