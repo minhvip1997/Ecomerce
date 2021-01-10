@@ -29,7 +29,6 @@ public class PhotoServiceImpl implements PhotoService{
         System.out.println("commit: Lưu lại trạng thái của index");
 
 
-
 	}
 
 	@Override
